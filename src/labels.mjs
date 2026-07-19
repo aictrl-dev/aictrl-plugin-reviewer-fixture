@@ -21,9 +21,9 @@ export function normalizeLabel(label) {
     throw new TypeError('label must be a string');
   }
 
-  const lowercased = label.replace(/[A-Z]/g, (character) => character.toLowerCase());
-  const trimmed = lowercased.trim();
-  const separated = trimmed.replace(/[\s_]+/g, '-');
+  const trimmed = label.trim();
+  const lowercased = trimmed.replace(/[A-Z]/g, (character) => character.toLowerCase());
+  const separated = lowercased.replace(/[\s_]+/g, '-');
   const cleaned = separated.replace(/[^a-z0-9-]/g, '');
 
   return cleaned
