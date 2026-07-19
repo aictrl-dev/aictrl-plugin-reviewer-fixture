@@ -2,9 +2,10 @@ schemaVersion: aictrl/workflow/v2
 name: implement-code-change
 label: Implement code change
 description: >-
-  Inspect one repository issue at an exact default-branch revision, pause before
-  any repository write, then implement the approved plan and open a merge-ready
-  pull request. The workflow never merges or deploys.
+  Use the organization-approved implementation skill to inspect one repository
+  issue at an exact default-branch revision, pause before any repository write,
+  then implement the approved plan and open a merge-ready pull request. The
+  workflow never merges or deploys.
 failureStrategy: fail-fast
 
 parameters:
