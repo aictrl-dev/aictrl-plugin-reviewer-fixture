@@ -152,15 +152,19 @@ nodes:
     taskType: general
     timeoutMinutes: 15
     prompt: >-
-      Work only on the supplied pull request. The review findings are supplied
-      as structured data. Revalidate every finding against the current head,
-      fix each true actionable defect with the smallest complete change, add or
-      update regression tests, run the repository's required verification,
-      push only the pull-request branch, post evidence-backed replies, and
-      request at most one bounded re-review. Then explicitly poll the required
-      status checks and review state for the exact final head until they are
-      terminal or this node's time limit is reached. This node is the workflow's
-      only wait for external CI and review events.
+      Work only on the supplied pull request. Start from the fresh workspace by
+      cloning the supplied repository with the available GitHub credentials,
+      fetch the pull request, and check out its exact head branch; fail closed
+      without pushing if repository or branch identity cannot be verified. The
+      review findings are supplied as structured data. Revalidate every finding
+      against the current head, fix each true actionable defect with the
+      smallest complete change, add or update regression tests, run the
+      repository's required verification, push only the pull-request branch,
+      post evidence-backed replies, and request at most one bounded re-review.
+      Then explicitly poll the required status checks and review state for the
+      exact final head until they are terminal or this node's time limit is
+      reached. This node is the workflow's only wait for external CI and review
+      events.
 
       Return structured JSON with revision, pull_request_url, checks, and
       status. checks must list every required check and its observed terminal

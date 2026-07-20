@@ -60,7 +60,9 @@ test('external CI and review polling is explicit and bounded', async () => {
   const readinessNode = workflow.slice(readinessStart, edgesStart);
 
   assert.match(readinessNode, /timeoutMinutes: 15/);
+  assert.match(readinessNode, /fresh workspace by/);
+  assert.match(readinessNode, /check out its exact head branch/);
   assert.match(readinessNode, /explicitly poll the required/);
-  assert.match(readinessNode, /only wait for external CI and review events/);
+  assert.match(readinessNode, /only wait for external CI and review\s+events/);
   assert.match(readinessNode, /request at most one bounded re-review/);
 });
