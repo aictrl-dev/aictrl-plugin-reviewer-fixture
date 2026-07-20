@@ -119,6 +119,8 @@ nodes:
     type: task
     skill: code-review@1.0.0
     taskType: code-review
+    # Specialist review lenses completed near 20 minutes in the connected
+    # rehearsal; keep a bounded ten-minute margin for synthesis and delivery.
     timeoutMinutes: 30
     prompt: >-
       Review the supplied pull request at its exact current head revision.
