@@ -45,7 +45,7 @@ test('only the final readiness node may report merge_ready', async () => {
   const readinessNode = workflow.slice(readinessStart, edgesStart);
 
   assert.match(implementationNode, /return status ready_for_review, never merge_ready/);
-  assert.match(reviewNode, /timeoutMinutes: 20/);
+  assert.match(reviewNode, /timeoutMinutes: 30/);
   assert.doesNotMatch(reviewNode, /status merge_ready/);
   assert.match(readinessNode, /Use status merge_ready only when all required checks are/);
   assert.match(readinessNode, /including required independent approval/);
