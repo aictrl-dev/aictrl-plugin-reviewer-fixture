@@ -2,7 +2,8 @@
 
 This dependency-free repository is the deterministic baseline for AICtrl's
 public plugin review cases. It intentionally contains one small JavaScript
-module and a fast Node test suite.
+module, a repository-owned implementation/review/readiness workflow, and a fast
+Node test suite that locks the workflow's safety policy.
 
 ```bash
 npm test
