@@ -29,7 +29,7 @@ test('connected implementation workflow owns review and readiness policy', () =>
   }
 
   assert.match(workflow, /skill: implement-code-change@1\.0\.0/);
-  assert.match(workflow, /skill: code-review@1\.0\.0/);
+  assert.match(workflow, /^\s+skill: code-review$/m);
   assert.match(workflow, /skill: reply-to-code-review@1\.0\.0/);
   assert.match(
     workflow,
