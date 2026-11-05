@@ -119,7 +119,7 @@ nodes:
   - id: review-pull-request
     label: Review exact pull-request revision
     type: task
-    skill: code-review@1.0.0
+    skill: code-review
     taskType: code-review
     timeoutMinutes: 30
     prompt: >-
